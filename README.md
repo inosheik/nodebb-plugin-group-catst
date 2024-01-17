@@ -1,0 +1,1 @@
+# nodebb-plugin-group-catst
