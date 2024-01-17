@@ -1,0 +1,32 @@
+{
+    "name": "nodebb-plugin-group-catst",
+    "version": "1.0.0",
+    "description": "A bridge between forums and groups",
+    "compatibility": "^3.3.0",
+    "main": "library.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/inosheik/nodebb-plugin-group-catst"
+    },
+    "keywords": [
+        "nodebb",
+        "plugin",
+        "groups",
+        "categories"
+    ],
+    "author": {
+        "name": "",
+        "email": ""
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/inosheik/nodebb-plugin-group-catst/issues"
+    },
+    "readmeFilename": "README.md",
+    "nbbpm": {
+        "compatibility": "^1.6.0"
+    },
+    "dependencies": {
+        "rewire": "^2.5.2"
+    }
+}
