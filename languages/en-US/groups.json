@@ -1,0 +1,12 @@
+{
+    "custom.grouptype.heading": "Group Type",
+    "custom.grouptype.open": "Open",
+    "custom.grouptype.public": "Public",
+    "custom.grouptype.premiumlocked": "Premium Locked",
+    "custom.grouptype.premiumhidden": "Premium Hidden",
+    "custom.grouptypedetails.public":"Anyone may view and join automatically",
+    "custom.grouptypedetails.premiumlocked": "Messages/posts are not visible to non-members (Invite-Only)",
+    "custom.grouptypedetails.open": "Open to all visitors for reading and replying",
+    "custom.groupsettinghelp.disablejoin": "Members will have to be invited manually",
+    "custom.groupcreate.errorinvalidname" : "Group name is not valid"
+}

@@ -131,6 +131,51 @@ plugin.groupCreated = async function(data){
 	}
 }
 
+plugin.groupUpdateFilter = async function(data){
+	//if ( !data.group.system ) {
+		console.log("JSON.stringify(data)")
+		console.log(JSON.stringify(data))
+		console.log("privileges.categories.groupPrivileges(data.values.memberPostCids, data.groupName)")
+
+		console.log(await privileges.categories.groupPrivileges(data.values.memberPostCids, 'registered-users') )
+		const groupPrivilegesRegUsers = await privileges.categories.groupPrivileges(data.values.memberPostCids, 'registered-users')
+		const isLockedGroup = !groupPrivilegesRegUsers['groups:read'] ? true : false;
+		console.log('isLockedGroup');
+		console.log(isLockedGroup);
+
+		const isGroupNameChanged = data.groupName === data.values.name ? false : true;
+		console.log('isGroupNameChanged');
+		console.log(isGroupNameChanged);
+	//}
+
+	return data;
+}
+
+plugin.groupUpdated = async function(data){
+	//if ( !data.group.system ) {
+		console.log("JSON.stringify(data)")
+		console.log(JSON.stringify(data))
+		console.log("privileges.categories.groupPrivileges(data.values.memberPostCids, data.name)")
+
+
+
+		console.log(await privileges.categories.groupPrivileges(data.values.memberPostCids, 'registered-users') )
+	//}
+}
+
+
+
+plugin.destroyGroup = async function(data){
+	//console.log(JSON.stringify(data))
+	if (data.groups[0].hasOwnProperty('system') & !data.groups[0].system & data.groups[0].hasOwnProperty('memberPostCids')) {
+		const validCids = await categories.getCidsByPrivilege('categories:cid', data.groups[0].name, 'topics:read');
+		const cidsArray = data.groups[0].memberPostCids.split(',').map(cid => parseInt(cid.trim(), 10)).filter(Boolean);
+		const toRemovePostCidsArr = cidsArray.filter(cid => validCids.includes(cid));
+		const catUpd = {};
+		catUpd[toRemovePostCidsArr[0]] = {disabled:1};
+		await categories.update(catUpd,function(err){});
+	}
+};
 
 /**
  * If you wish to add routes to NodeBB's RESTful API, listen to the `static:api.routes` hook.

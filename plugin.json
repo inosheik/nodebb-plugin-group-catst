@@ -6,6 +6,9 @@
 		{ "hook": "static:app.load", "method": "init" },
         { "hook": "filter:group.create", "method": "createGroupFilter" },
 		{ "hook": "action:group.create", "method": "groupCreated" },
+		{ "hook": "filter:group.update", "method": "groupUpdateFilter" },
+		{ "hook": "action:group.update", "method": "groupUpdated" },
+		{ "hook": "action:groups.destroy", "method": "destroyGroup" },
 		{ "hook": "static:api.routes", "method": "addRoutes" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" }
 	],
@@ -25,5 +28,7 @@
 		"../client/quickstart.js": "./static/lib/quickstart.js",
 		"../admin/plugins/quickstart.js": "./static/lib/admin.js"
 	},
+	"languages": "languages",
+	"defaultLang": "en-US",
 	"templates": "static/templates"
 }
