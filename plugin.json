@@ -1,21 +1,29 @@
 {
 	"id": "nodebb-plugin-group-catst",
-	"url": "https://github.com/inosheik/nodebb-plugin-group-catst",
+	"url": "https://github.com/ishaikdev/nodebb-plugin-group-catst",
 	"library": "./library.js",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
-		
-        { "hook": "action:group.create", "method": "createGroup" },
-        { "hook": "action:groups.destroy", "method": "destroyGroup" }
+        { "hook": "filter:group.create", "method": "createGroupFilter" },
+		{ "hook": "action:group.create", "method": "groupCreated" },
+		{ "hook": "static:api.routes", "method": "addRoutes" },
+		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" }
 	],
 	"staticDirs": {
 		"static": "./static"
 	},
-	"less": [
-		"static/style.less"
+	"scss": [
+		"static/scss/quickstart.scss"
 	],
 	"scripts": [
 		"static/lib/main.js"
 	],
+	"acpScripts": [
+		"static/lib/acp-main.js"
+	],
+	"modules": {
+		"../client/quickstart.js": "./static/lib/quickstart.js",
+		"../admin/plugins/quickstart.js": "./static/lib/admin.js"
+	},
 	"templates": "static/templates"
 }

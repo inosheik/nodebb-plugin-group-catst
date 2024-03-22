@@ -1,32 +1,45 @@
 {
-    "name": "nodebb-plugin-group-catst",
-    "version": "1.0.0",
-    "description": "A bridge between forums and groups",
-    "compatibility": "^3.3.0",
-    "main": "library.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/inosheik/nodebb-plugin-group-catst"
-    },
-    "keywords": [
-        "nodebb",
-        "plugin",
-        "groups",
-        "categories"
-    ],
-    "author": {
-        "name": "",
-        "email": ""
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/inosheik/nodebb-plugin-group-catst/issues"
-    },
-    "readmeFilename": "README.md",
-    "nbbpm": {
-        "compatibility": "^1.6.0"
-    },
-    "dependencies": {
-        "rewire": "^2.5.2"
+  "name": "nodebb-plugin-group-catst",
+  "version": "0.4.3",
+  "description": "A bridge between forums and groups",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ishaikdev/nodebb-plugin-group-catst"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "groups",
+    "categories"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ishaikdev/nodebb-plugin-group-catst/issues"
+  },
+  "readmeFilename": "README.md",
+  "nbbpm": {
+    "compatibility": "^3.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "19.2.1",
+    "@commitlint/config-angular": "19.1.0",
+    "eslint": "8.x",
+    "eslint-config-nodebb": "0.2.1",
+    "eslint-plugin-import": "2.x",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.2"
+  }
 }
