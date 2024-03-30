@@ -8,5 +8,9 @@
     "custom.grouptypedetails.premiumlocked": "Messages/posts are not visible to non-members (Invite-Only)",
     "custom.grouptypedetails.open": "Open to all visitors for reading and replying",
     "custom.groupsettinghelp.disablejoin": "Members will have to be invited manually",
-    "custom.groupcreate.errorinvalidname" : "Group name is not valid"
+    "custom.groupcreate.errorinvalidname" : "Group name is not valid",
+    "custom.groupconfirm.grantownership" : "Are you sure you want to make this user an owner of this group?",
+    "custom.groupconfirm.removeownership" : "Are you sure you want to remove this user as an owner of this group?",
+    "custom.groupconfirm.grantmoderator" : "Are you sure you want to make this user a moderator of this group?",
+    "custom.groupconfirm.removemoderator" : "Are you sure you want to remove this user as a moderator of this group?"
 }

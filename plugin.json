@@ -4,11 +4,15 @@
 	"library": "./library.js",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
-        { "hook": "filter:group.create", "method": "createGroupFilter" },
+		{ "hook": "filter:group.get", "method": "getGroupFilter" },
+        { "hook": "filter:group.create", "method": "groupCreateFilter" },
 		{ "hook": "action:group.create", "method": "groupCreated" },
-		{ "hook": "filter:group.update", "method": "groupUpdateFilter" },
 		{ "hook": "action:group.update", "method": "groupUpdated" },
-		{ "hook": "action:groups.destroy", "method": "destroyGroup" },
+		{ "hook": "action:groups.destroy", "method": "groupsDeleted" },
+		{ "hook": "action:group.grantOwnership", "method": "groupAddedOwner" },
+		{ "hook": "action:group.leave", "method": "groupLeaveAction" },
+		{ "hook": "filter:custom.group-catst.grantmoderator", "method": "groupFilterAddModerator" },
+		{ "hook": "filter:custom.group-catst.rescindmoderator", "method": "groupFilterRemoveModerator" },
 		{ "hook": "static:api.routes", "method": "addRoutes" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" }
 	],
